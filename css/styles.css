@@ -92,8 +92,6 @@ body {
     font-size: 1.6rem;
     /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
     line-height: 1.375;
-    justify-content: center;
-
 }
 @media (min-width: 600px) {
     body {
@@ -185,7 +183,14 @@ h4 { /* = 16px */
     text-align: center;
 }
 
-/* Séparation en colonne des articles.description */
+/* Mettre l'image en background*/
+@media(min-width:601px){
+    .header{
+    background-image: url(../images/photo-montage_1000.jpg)
+    }
+}
+
+/* Séparation en trois colonne des articles.description */
 
 @media (min-width: 600px) {
     .descriptions {
@@ -201,6 +206,18 @@ h4 { /* = 16px */
 }
 
 /* Séparation en deux colonnes des sous-articles de liste*/
+.nav__list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    background-color: black;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
 /* Liste de navigation Header */
 .nav__list.nav__list--sublist{
     list-style: none;
@@ -211,17 +228,17 @@ h4 { /* = 16px */
     height: 100%;
     background-color: White;
     color: blue;
-  }
+}
 
-  .nav__listItem {
+.nav__listItem {
     padding: 0 .7em;
     padding-top: .2em;
     padding-bottom: .2em;
     position: relative; /* Référence de positionnement pour le sous-menu */
-  }
+}
 
   /* Liste de navigation Footer */
-  .nav__list{
+.nav__list{
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -229,20 +246,25 @@ h4 { /* = 16px */
     align-items: center;
     height: 100%;
     background-color: black;
-  }
+}
  
-  .nav__listItem:nth-child(1){
-    background-color: orange;
-    }
+.nav__listItem:nth-child(1){
+    background-color: lightblue;
+}
 
-/* Application d'un background*/
+
+/* Application d'un background et séparation de la section en deux colonnes */
 .encadres{
     display: flex;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 
 .encadres__item{
     background-color:lightgrey;
-    justify-content: space-between;
+    margin-right: 1.5rem; */
+    
+    /* padding: 1rem 1rem 1rem 0rem; */
 }
 
 .encadres__item:nth-child(2) {
@@ -256,3 +278,4 @@ h4 { /* = 16px */
 .copyright {
     text-align: center;
 }
+
