@@ -13,9 +13,13 @@
 
 /* Normalize
    ========================================================================== */
-
+@import url(normalize.css);
 /* Utilitaires
    ========================================================================== */
+
+.nav--picture
+
+.figure
 
 /*** Harmoniser le modèle de boîte avec Box-Sizing ***/
 html {
@@ -26,6 +30,27 @@ html {
 *::before, 
 *::after {
     box-sizing: inherit;
+}
+.descriptions
+
+figure {
+    margin: 0px;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* marges latérales sur écran étroit et centrage sur écran large */
+.layout-page{
+    padding:2rem; 
+}
+
+@media(min-width:600px){
+    .layout-page {
+        max-width:1000px;
+        margin:auto;
+    }
 }
 
 /* Charte typographique
@@ -67,6 +92,8 @@ body {
     font-size: 1.6rem;
     /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
     line-height: 1.375;
+    justify-content: center;
+
 }
 @media (min-width: 600px) {
     body {
@@ -91,6 +118,7 @@ h4{
 /* Hiérarchie responsive : plus proche = plus petit  &  plus loin = plus grand */
 h1 { /* = 32px */
     font-size: 3.2rem;
+    margin-bottom: 0;
 }
 @media (min-width: 600px) {
     h1 { /* = 40px */
@@ -106,9 +134,16 @@ h1 { /* = 32px */
 h2 { /* = 24px */
     font-size: 2.4rem;
 }
+
+h2:first-of-type{
+    margin-top: 0;
+    line-height: 1;
+}
+
 @media (min-width: 600px) {
     h2 { /* = 32px */
         font-size: 3.2rem;
+
     }
 }
 @media (min-width: 800px) {
@@ -143,4 +178,81 @@ h4 { /* = 16px */
     h4 { /* = 22px */
         font-size: 2.2rem;
     }
+}
+
+/* Centrer l'introduction */
+.introduction {
+    text-align: center;
+}
+
+/* Séparation en colonne des articles.description */
+
+@media (min-width: 600px) {
+    .descriptions {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .description {
+        flex: 0 1 33%;
+        padding: 1.2rem
+    }
+}
+
+/* Séparation en deux colonnes des sous-articles de liste*/
+/* Liste de navigation Header */
+.nav__list.nav__list--sublist{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: White;
+    color: blue;
+  }
+
+  .nav__listItem {
+    padding: 0 .7em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    position: relative; /* Référence de positionnement pour le sous-menu */
+  }
+
+  /* Liste de navigation Footer */
+  .nav__list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    background-color: black;
+  }
+ 
+  .nav__listItem:nth-child(1){
+    background-color: orange;
+    }
+
+/* Application d'un background*/
+.encadres{
+    display: flex;
+}
+
+.encadres__item{
+    background-color:lightgrey;
+    justify-content: space-between;
+}
+
+.encadres__item:nth-child(2) {
+    background-color: lightgrey;
+}
+
+.credits {
+    background-color:gray;
+}
+
+.copyright {
+    text-align: center;
 }
