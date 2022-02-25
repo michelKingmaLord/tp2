@@ -16,9 +16,9 @@
 <body>
     <div class="layout-page">
 
-        <header id="header" role="banner">
+        <header class="header" id="header" role="banner">
 
-            <nav class="nav nav--header" role="navigation">
+            <nav class="nav--header" role="navigation">
                 <a class="logo" href="index.html">
                     <img src="images/logo-final.png" alt="Accueil (logo à la manière de)">
                 </a>
@@ -30,7 +30,7 @@
                 </ul>
             </nav>
 
-            <picture class="nav nav--picture">
+            <picture class="nav--picture">
                 <source media="(max-width:600px" srcset="images/photo-montage_600.jpg">
                 <source media="(min-width:601px" srcset="images/photo-montage_1000.jpg">
                 <img src="images/photo-montage_600.jpg" alt=" ">
@@ -119,11 +119,11 @@
         <footer id="footer" role="contentinfo">
             <nav class="nav nav--footer">
                 <ul class="nav__list">
-                    <li class="nav__listItem"><a class="nav__link nav__link--active" href="artistes.html">Artistes</a>
+                    <li class="nav__listItem"><a class="nav__link--footer nav__link--active" href="artistes.html">Artistes</a>
                     </li>
-                    <li class="nav__listItem"><a class="nav__link" href="blogue.html">Blogue</a></li>
-                    <li class="nav__listItem"><a class="nav__link" href="ressources.html">Ressources</a></li>
-                    <li class="nav__listItem"><a class="nav__link" href="a-propos.html">À propos</a></li>
+                    <li class="nav__listItem"><a class="nav__link--footer" href="blogue.html">Blogue</a></li>
+                    <li class="nav__listItem"><a class="nav__link--footer" href="ressources.html">Ressources</a></li>
+                    <li class="nav__listItem"><a class="nav__link--footer" href="a-propos.html">À propos</a></li>
                 </ul>
             </nav>
 
@@ -146,10 +146,12 @@
                             href="https://www.behance.net/gallery/44945511/Adobe-Creative-Cloud">https://www.behance.net/gallery/44945511/Adobe-Creative-Cloud</a>
                     </li>
                 </ol>
+
+                <p class="copyright"><small>Tous droits réservés, &copy; Projet en Intégration <time>2022</time> - Kingma-Lord
+                    Michel</small></p>
             </section>
 
-            <p class="copyright"><small>Tous droits réservés, &copy; Projet en Intégration <time>2022</time> - Kingma-Lord
-                    Michel</small></p>
+            
 
         </footer>
 

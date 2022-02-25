@@ -17,9 +17,7 @@
 /* Utilitaires
    ========================================================================== */
 
-.nav--picture
 
-.figure
 
 /*** Harmoniser le modèle de boîte avec Box-Sizing ***/
 html {
@@ -41,9 +39,11 @@ img{
     max-width: 100%;
 }
 
+
 /* marges latérales sur écran étroit et centrage sur écran large */
 .layout-page{
-    padding:2rem; 
+    padding:2rem 2rem 0;
+    background-color: white;
 }
 
 @media(min-width:600px){
@@ -92,6 +92,7 @@ body {
     font-size: 1.6rem;
     /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
     line-height: 1.375;
+    background-image: url(../images/moroccan-flower.png);
 }
 @media (min-width: 600px) {
     body {
@@ -131,12 +132,11 @@ h1 { /* = 32px */
 
 h2 { /* = 24px */
     font-size: 2.4rem;
-}
-
-h2:first-of-type{
     margin-top: 0;
     line-height: 1;
 }
+
+
 
 @media (min-width: 600px) {
     h2 { /* = 32px */
@@ -183,11 +183,56 @@ h4 { /* = 16px */
     text-align: center;
 }
 
-/* Mettre l'image en background*/
-@media(min-width:601px){
+/* Ajustement de la main*/
+main {
+    display: block;
+}
+
+/* Mettre l'image en background et ajuster le menu selon les médias*/
+@media(min-width:600px){
     .header{
-    background-image: url(../images/photo-montage_1000.jpg)
+    min-height: 433px;
+    background-image: url(../images/photo-montage_1000.jpg);
+    background-position: 0 48px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    font-size: 1.6rem;
     }
+    
+    .nav--picture{
+        display:none;
+    }
+}
+
+@media (min-width:800px) {
+    .header {
+        background-size : contain;
+    }
+}
+
+@media(min-width:601px){
+    .nav--header{
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        display: flex;
+    }
+}
+.nav--header{
+    flex-wrap: wrap;
+    display: flex;
+}
+
+/* LOGO */
+@media (min-width: 600px) {
+    .logo{
+        max-width: 250px;
+    }    
+}
+
+.logo {
+    flex-grow: 1;
+    text-align: center;
+    transition: all 0.5s;
 }
 
 /* Séparation en trois colonne des articles.description */
@@ -210,12 +255,19 @@ h4 { /* = 16px */
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     background-color: black;
     text-transform: uppercase;
-    overflow: hidden;
+    overflow: hidden; 
+    margin-bottom: 0;
+}
+
+.nav__link, .nav__link--active .nav__link--footer{
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.25rem;
 }
 
 /* Liste de navigation Header */
@@ -223,17 +275,27 @@ h4 { /* = 16px */
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     background-color: White;
     color: blue;
+    margin:0;
+    padding:0;
+    width: 100%;
+    order: 1;
+}
+
+@media (min-width: 600px) {
+    .nav--header .nav__list {
+        width: auto;
+    }
 }
 
 .nav__listItem {
     padding: 0 .7em;
-    padding-top: .2em;
-    padding-bottom: .2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
     position: relative; /* Référence de positionnement pour le sous-menu */
 }
 
@@ -242,16 +304,34 @@ h4 { /* = 16px */
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     background-color: black;
+    padding-left: 0;
 }
  
 .nav__listItem:nth-child(1){
     background-color: lightblue;
+    color: orange;
+    text-decoration: none;
 }
 
+.nav__link--footer{
+    text-decoration: none;
+    color: white;
+}
+
+.nav__link--active{
+    text-decoration: none;
+    color: orange
+}
+
+/* Navigation et Surlignage*/
+
+.nav__link:hover, .nav__link--active:hover, .nav__link--footer:hover{
+    color: orange;
+}
 
 /* Application d'un background et séparation de la section en deux colonnes */
 .encadres{
@@ -259,12 +339,11 @@ h4 { /* = 16px */
     margin-top: 0%;
     margin-bottom: 0%;
 }
-
+    
 .encadres__item{
     background-color:lightgrey;
-    margin-right: 1.5rem; */
-    
-    /* padding: 1rem 1rem 1rem 0rem; */
+    margin-right: 1.5rem; 
+    padding: 2rem 1rem 1rem 1rem; */
 }
 
 .encadres__item:nth-child(2) {
@@ -272,10 +351,11 @@ h4 { /* = 16px */
 }
 
 .credits {
-    background-color:gray;
+    padding-top: 2rem;
+    background-color:lightgray;
+    padding-right: 2rem;
 }
 
 .copyright {
     text-align: center;
 }
-
